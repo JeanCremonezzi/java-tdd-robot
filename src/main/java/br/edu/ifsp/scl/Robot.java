@@ -10,6 +10,11 @@ public class Robot {
     }
 
     public Coordinate checkObstaclePosition(int beam, int distance) {
-        return new Coordinate(0, 0);
+        double obstacleOrientation = Math.toRadians(orientation - (beam - 90));
+
+        int obstaclexAxis = (int) Math.floor(position.getxAxis() + (distance * Math.cos(obstacleOrientation)));
+        int obstacleyAxis = (int) Math.floor(position.getyAxis() + (distance * Math.sin(obstacleOrientation)));
+
+        return new Coordinate(obstaclexAxis, obstacleyAxis);
     }
 }
