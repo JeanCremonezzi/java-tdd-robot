@@ -12,8 +12,8 @@ public class Robot {
     public Coordinate checkObstaclePosition(int beam, int distance) {
         double obstacleOrientation = Math.toRadians(orientation - (beam - 90));
 
-        int obstaclexAxis = (int) Math.floor(position.getxAxis() + (distance * Math.cos(obstacleOrientation)));
-        int obstacleyAxis = (int) Math.floor(position.getyAxis() + (distance * Math.sin(obstacleOrientation)));
+        int obstaclexAxis = (int) Math.round(position.getxAxis() + (distance * Math.cos(obstacleOrientation)));
+        int obstacleyAxis = (int) Math.round(position.getyAxis() + (distance * Math.sin(obstacleOrientation)));
 
         return new Coordinate(obstaclexAxis, obstacleyAxis);
     }
