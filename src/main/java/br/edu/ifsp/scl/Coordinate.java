@@ -31,4 +31,9 @@ public class Coordinate {
     public int hashCode() {
         return Objects.hash(xAxis, yAxis);
     }
+
+    @Override
+    public String toString() {
+        return "(" + xAxis + "," + yAxis + ")";
+    }
 }
